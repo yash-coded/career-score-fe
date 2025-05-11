@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import UploadForm from './components/upload/UploadForm';
@@ -18,6 +19,15 @@ export default function Home() {
           <p className="text-xl md:text-2xl font-medium text-center text-teal">
             Upload your resume and job info for a smart match analysis.
           </p>
+
+          <div className="flex justify-center">
+            <Link
+              href="/assessment"
+              className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              View Sample Assessment
+            </Link>
+          </div>
         </div>
 
         <div className="max-w-5xl w-full">

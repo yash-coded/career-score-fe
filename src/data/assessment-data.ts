@@ -3,6 +3,23 @@ import { CandidateAssessment } from '@/types/assessment';
 export const assessmentData: CandidateAssessment = {
   name: 'Justin Cervantes',
   assessment: {
+    radarCategories: {
+      school: {
+        score: 12,
+      },
+      workHistory: {
+        score: 12,
+      },
+      domainRelevance: {
+        score: 10,
+      },
+      softSkills: {
+        score: 8,
+      },
+      technicalSkills: {
+        score: 10,
+      },
+    },
     categoryBreakdown: [
       {
         category: 'Employee work history prestige',

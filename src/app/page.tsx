@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 // Navbar and Footer are expected to be in a layout component, so not imported here directly for the page content.
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
           </p>
           <Link
             href="/upload-resume" // Assuming this is the correct link for uploading
-            className="bg-accent-figma text-primary-text-figma text-xl md:text-2xl font-medium py-4 px-10 rounded-lg inline-block shadow-md hover:bg-accent-figma/90 transition-colors"
+            className="bg-accent bg-accent-figma text-primary-text-figma text-xl md:text-2xl font-medium py-4 px-10 rounded-lg inline-block shadow-md hover:bg-accent-figma/90 transition-colors"
           >
             Upload Resume
           </Link>
@@ -34,24 +34,24 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
               {
-                icon: '/images/figma/ranking-icon.svg',
-                title: 'Compare Your Resume',
-                bgShape: '/images/figma/feature-bg-shape-ranking.svg',
+                icon: "/images/figma/ranking-icon.svg",
+                title: "Compare Your Resume",
+                bgShape: "/images/figma/feature-bg-shape-ranking.svg",
               },
               {
-                icon: '/images/figma/people-icon.svg',
-                title: 'Check Your Culture Fit',
-                bgShape: '/images/figma/feature-bg-shape-people.svg',
+                icon: "/images/figma/people-icon.svg",
+                title: "Check Your Culture Fit",
+                bgShape: "/images/figma/feature-bg-shape-people.svg",
               },
               {
-                icon: '/images/figma/note-icon.svg',
-                title: 'Get Your Best Resume',
-                bgShape: '/images/figma/feature-bg-shape-note.svg',
+                icon: "/images/figma/note-icon.svg",
+                title: "Get Your Best Resume",
+                bgShape: "/images/figma/feature-bg-shape-note.svg",
               },
               {
-                icon: '/images/figma/messages-icon.svg',
-                title: 'Get Personalized Mentor',
-                bgShape: '/images/figma/feature-bg-shape-messages.svg',
+                icon: "/images/figma/messages-icon.svg",
+                title: "Get Personalized Mentor",
+                bgShape: "/images/figma/feature-bg-shape-messages.svg",
               },
             ].map((feature, index) => (
               <div

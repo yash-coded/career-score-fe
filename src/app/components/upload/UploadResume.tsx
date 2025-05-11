@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
-import Image from 'next/image';
+"use client";
+import { useState, useRef } from "react";
+import Image from "next/image";
 
 const UploadResume = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -10,9 +11,9 @@ const UploadResume = () => {
     e.preventDefault();
     e.stopPropagation();
 
-    if (e.type === 'dragenter' || e.type === 'dragover') {
+    if (e.type === "dragenter" || e.type === "dragover") {
       setDragActive(true);
-    } else if (e.type === 'dragleave') {
+    } else if (e.type === "dragleave") {
       setDragActive(false);
     }
   };
@@ -39,21 +40,21 @@ const UploadResume = () => {
     // Check file type (PDF or DOC/DOCX)
     const fileType = uploadedFile.type;
     const validTypes = [
-      'application/pdf',
-      'application/msword',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     ];
 
     // Check file size (max 5MB)
     const fileSize = uploadedFile.size / 1024 / 1024; // Convert to MB
 
     if (!validTypes.includes(fileType)) {
-      alert('Please upload a PDF or Word document.');
+      alert("Please upload a PDF or Word document.");
       return;
     }
 
     if (fileSize > 5) {
-      alert('File size should not exceed 5MB.');
+      alert("File size should not exceed 5MB.");
       return;
     }
 
@@ -68,7 +69,7 @@ const UploadResume = () => {
     <div className="w-full h-[400px] bg-card-bg border-2 border-border rounded-xl flex items-center justify-center">
       <div
         className={`relative flex flex-col items-center justify-center w-full h-full p-6 ${
-          dragActive ? 'bg-blue-50' : ''
+          dragActive ? "bg-blue-50" : ""
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -86,6 +87,13 @@ const UploadResume = () => {
         <div className="mb-4 relative w-16 h-16 border border-border rounded-xl bg-white flex items-center justify-center">
           <div className="relative w-6 h-6">
             <Image
+              src="/images/uploadIcon.png"
+              alt="Upload icon"
+              width={24}
+              height={24}
+              className="absolute"
+            />
+            {/* <Image
               src="/images/upload-vector1.svg"
               alt="Upload icon"
               width={24}
@@ -105,7 +113,7 @@ const UploadResume = () => {
               width={24}
               height={24}
               className="absolute"
-            />
+            /> */}
           </div>
         </div>
 

@@ -1,22 +1,23 @@
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 const JobDetails = () => {
-  const [jobUrl, setJobUrl] = useState('');
-  const [jobDescription, setJobDescription] = useState('');
+  const [jobUrl, setJobUrl] = useState("");
+  const [jobDescription, setJobDescription] = useState("");
 
   const handleJobUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setJobUrl(e.target.value);
     if (e.target.value) {
-      setJobDescription('');
+      setJobDescription("");
     }
   };
 
   const handleJobDescriptionChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setJobDescription(e.target.value);
     if (e.target.value) {
-      setJobUrl('');
+      setJobUrl("");
     }
   };
 

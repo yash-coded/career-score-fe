@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #276EF1;
-  --accent: #FFB400;
-  --teal: #2EC4B6;
-  --background: #FFFFFF;
-  --text-dark: #1A1A1A;
-  --text-light: #ADB5BD;
-  --card-bg: #FAFAFA;
-  --border: #EFEFEF;
+  --primary: #276ef1;
+  --accent: #ffb400;
+  --teal: #2ec4b6;
+  --background: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #adb5bd;
+  --card-bg: #fafafa;
+  --border: #efefef;
 }
 
 @theme inline {
@@ -21,6 +21,7 @@
   --color-card-bg: var(--card-bg);
   --color-border: var(--border);
   --font-sans: var(--font-space-grotesk);
+  --tw-shadow2: 0 0 10px 0 var(--tw-shadow-color, #0000001a);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,5 +39,10 @@ body {
 
 /* Custom gradient background */
 .gradient-bg {
-  background: linear-gradient(135deg, rgba(228, 228, 228, 0) 0%, #A9C5F9 100%);
+  background: linear-gradient(135deg, rgba(228, 228, 228, 0) 0%, #a9c5f9 100%);
+}
+
+.square-shawdow-color {
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow2);
 }

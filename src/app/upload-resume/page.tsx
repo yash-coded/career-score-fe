@@ -1,20 +1,9 @@
-"use client";
-import { useState } from "react";
-import JobDetails from "../components/upload/JobDetails";
-import UploadResume from "../components/upload/UploadResume";
-import SubmitButton from "../components/upload/SubmitButton";
+'use client';
+import JobDetails from '../components/upload/JobDetails';
+import UploadResume from '../components/upload/UploadResume';
+import SubmitButton from '../components/upload/SubmitButton';
 
 const UploadForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Analysis report would be generated here. This is just a UI demo.");
-    }, 2000);
-  };
-
   return (
     <div className="flex-1 flex flex-col items-center px-6 py-12 md:py-16">
       <div className="max-w-7xl w-full space-y-8 mb-16">
@@ -38,7 +27,7 @@ const UploadForm = () => {
           </div>
 
           <div className="flex justify-end mt-6">
-            <SubmitButton onClick={handleSubmit} disabled={isSubmitting} />
+            <SubmitButton />
           </div>
         </div>
       </div>

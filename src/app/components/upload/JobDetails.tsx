@@ -1,23 +1,24 @@
-"use client";
-import { useState } from "react";
+'use client';
+
+import { useUpload } from '@/context/UploadContext';
 
 const JobDetails = () => {
-  const [jobUrl, setJobUrl] = useState("");
-  const [jobDescription, setJobDescription] = useState("");
+  const { jobUrl, setJobUrl, jobDescription, setJobDescription, error } =
+    useUpload();
 
   const handleJobUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setJobUrl(e.target.value);
     if (e.target.value) {
-      setJobDescription("");
+      setJobDescription('');
     }
   };
 
   const handleJobDescriptionChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     setJobDescription(e.target.value);
     if (e.target.value) {
-      setJobUrl("");
+      setJobUrl('');
     }
   };
 
@@ -59,6 +60,9 @@ const JobDetails = () => {
           onChange={handleJobDescriptionChange}
         ></textarea>
       </div>
+
+      {/* Display error if any */}
+      {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
     </div>
   );
 };

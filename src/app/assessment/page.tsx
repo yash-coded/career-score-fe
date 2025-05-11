@@ -79,7 +79,7 @@ export default function Assessment() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-bold mb-4">Skills Radar</h3>
               <ScoreChart
-                categories={displayData.assessment.categoryBreakdown}
+                radarCategories={displayData.assessment.radarCategories}
               />
             </div>
           </div>

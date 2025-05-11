@@ -6,12 +6,14 @@ const Navbar = () => {
     <nav className="w-full py-4 px-8 flex justify-between items-center shadow-md bg-white">
       <div className="logo relative w-32 h-10">
         <div className="relative w-full h-full">
-          <Image
-            src="/icon/logo.png"
-            alt="Logo"
-            fill
-            className="object-contain"
-          />
+          <Link href="/">
+            <Image
+              src="/icon/logo.png"
+              alt="Logo"
+              fill
+              className="object-contain"
+            />
+          </Link>
         </div>
       </div>
 

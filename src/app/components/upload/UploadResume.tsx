@@ -89,7 +89,7 @@ const UploadResume = () => {
         <div className="mb-4 relative w-16 h-16 border border-border rounded-xl bg-white flex items-center justify-center">
           <div className="relative w-6 h-6">
             <Image
-              src="/images/uploadIcon.png"
+              src="/icon/uploadIcon.png"
               alt="Upload icon"
               width={24}
               height={24}

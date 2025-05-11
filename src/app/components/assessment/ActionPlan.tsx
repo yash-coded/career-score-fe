@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { ActionItem } from '@/types/assessment';
+import { ActionItem } from "@/types/assessment";
 
 interface ActionPlanProps {
   shortTerm: ActionItem[];
@@ -11,14 +11,10 @@ interface ActionPlanProps {
 const ActionPlan: React.FC<ActionPlanProps> = ({
   shortTerm,
   longTerm,
-  className = '',
+  className = "",
 }) => {
   return (
     <div className={`${className}`}>
-      <h2 className="text-3xl font-bold text-center text-[#276EF1] mb-6">
-        Recommendations
-      </h2>
-
       {/* Short-term actions */}
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-4">Short-term Actions</h3>

@@ -1,15 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #276EF1;
+  --accent: #FFB400;
+  --teal: #2EC4B6;
+  --background: #FFFFFF;
+  --text-dark: #1A1A1A;
+  --text-light: #ADB5BD;
+  --card-bg: #FAFAFA;
+  --border: #EFEFEF;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-teal: var(--teal);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
+  --color-card-bg: var(--card-bg);
+  --color-border: var(--border);
+  --font-sans: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +32,11 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Custom gradient background */
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(228, 228, 228, 0) 0%, #A9C5F9 100%);
 }

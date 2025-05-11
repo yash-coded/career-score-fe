@@ -7,7 +7,7 @@ export interface CategoryScore {
 
 export interface VerdictItem {
   item: string;
-  verdict: string;
+  verdict: 'Strong' | 'Medium' | 'Weak';
 }
 
 export interface ActionItem {
@@ -15,14 +15,27 @@ export interface ActionItem {
   reason: string;
 }
 
+export interface RadarCategory {
+  score: number;
+}
+
+export interface RadarCategories {
+  school: RadarCategory;
+  workHistory: RadarCategory;
+  domainRelevance: RadarCategory;
+  softSkills: RadarCategory;
+  technicalSkills: RadarCategory;
+}
+
 export interface Assessment {
+  radarCategories: RadarCategories;
   categoryBreakdown: CategoryScore[];
   reputation: VerdictItem[];
   leadership: VerdictItem[];
   softSkills: VerdictItem[];
   technicalSkills: VerdictItem[];
   cultureFit: VerdictItem[];
-  actionItems: string;
+  actionItems: 'Improve' | 'Keep' | 'Highlight';
   overallScore: number;
   feedback: string;
   longTermActionPlan: ActionItem[];

@@ -1,6 +1,6 @@
 'use client';
 
-import { CategoryScore } from '@/types/assessment';
+import { RadarCategories } from '@/types/assessment';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -22,19 +22,31 @@ ChartJS.register(
 );
 
 interface ScoreChartProps {
-  categories: CategoryScore[];
+  radarCategories: RadarCategories;
 }
 
-const ScoreChart: React.FC<ScoreChartProps> = ({ categories }) => {
-  // Sort categories by score in descending order
-  const sortedCategories = [...categories].sort((a, b) => b.score - a.score);
+const ScoreChart: React.FC<ScoreChartProps> = ({ radarCategories }) => {
+  // Format category names for better display
+  const formatCategoryName = (name: string): string => {
+    return name
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, (str) => str.toUpperCase());
+  };
+
+  // Convert the radar categories object to arrays for the chart
+  const categoryNames = Object.keys(radarCategories).map((key) =>
+    formatCategoryName(key),
+  );
+  const categoryScores = Object.values(radarCategories).map(
+    (category) => category.score,
+  );
 
   const data = {
-    labels: sortedCategories.map((cat) => cat.category),
+    labels: categoryNames,
     datasets: [
       {
         label: 'Score',
-        data: sortedCategories.map((cat) => cat.score),
+        data: categoryScores,
         backgroundColor: 'rgba(39, 110, 241, 0.2)',
         borderColor: 'rgba(39, 110, 241, 1)',
         borderWidth: 2,
